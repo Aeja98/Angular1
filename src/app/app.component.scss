@@ -1,0 +1,68 @@
+@use '../styles/theme' as *;
+
+.menu-wrapper {
+    position: relative;
+    text-align: end;
+
+    .icon {
+        float: right;
+        font-size: 2rem;
+        color: $iconColor;
+        cursor: pointer;
+        animation: idle-spin 8s linear infinite;
+
+        &:hover {
+        animation: fast-spin 1s linear infinite;
+        }
+    }
+
+    nav {
+        display: none;
+        gap: 1em;
+        animation: fadeIn 0.5s ease-out forwards;
+        place-content: center;
+        position: fixed;     
+
+        a {
+            padding: 0.5em 1em;
+            color: $linkText;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        
+        a:nth-child(1){border: #c7b3e5 solid 1px;}
+        a:nth-child(2){border: #e5dfa7 solid 1px;}
+        a:nth-child(3){border: #ebbbcc solid 1px;}
+
+        &.open {
+            display: flex;
+            width: 100%;
+            float: left;
+            place-content: start;
+            :nth-child(1){background-color: #ece0ff;}
+            :nth-child(2){background-color: #fffacd;}
+            :nth-child(3){background-color: #ffe3ed;}
+        }
+    }
+}
+
+
+@keyframes fast-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes idle-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

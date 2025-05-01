@@ -14,19 +14,70 @@
         <h2>Omvandlare</h2>
 
         <div class="converter">
-        <h3>Mätomvandlare</h3>
-        <label for="meters">Meter:</label>
-        <input id="meters" type="number" [(ngModel)]="meters">
-        <button (click)="convertToFeet()">Konvertera till Fot</button>
-        <p *ngIf="feetResult !== null">Resultat: {{ feetResult }} fot</p>
+            <h3>Mätomvandlare<br>(meter ↔ fot)</h3>
+            <label class="switch">
+                <input type="checkbox" [(ngModel)]="convertFeetMode">
+                <span class="slider"></span>
+            </label>
 
-        <br><br>
+            <span class="toggle-label">
+            {{ convertFeetMode ? 'Meter → Fot' : 'Fot → Meter' }}
+            </span>
+            
+            <label for="meters">{{ convertFeetMode ? 'Meter:' : 'Fot:' }}</label>
+            <input id="meters" type="number" [(ngModel)]="meters"> <br>
+            <button (click)="convertDistance()">Konvertera</button>
+            
+            <app-result-box
+            [label]="convertFeetMode ? 'Meter till fot resultat' : 'Fot till meter resultat'"
+            [value]="feetResult"
+            [unit]="convertFeetMode ? 'ft' : 'm'">
+            </app-result-box>
 
-        <h3>Temperaturomvandlare</h3>
-        <label for="celsius">Celsius:</label>
-        <input id="celsius" type="number" [(ngModel)]="celsius">
-        <button (click)="convertToFahrenheit()">Konvertera till Fahrenheit</button>
-        <p *ngIf="fahrenheitResult !== null">Resultat: {{ fahrenheitResult }} °F</p>
+            <br><hr>
+
+            <h3>Temperaturomvandlare<br>(celsius ↔ fahrenheit)</h3>
+
+            <label class="switch">
+                <input type="checkbox" [(ngModel)]="convertTempMode">
+                <span class="slider"></span>
+            </label>
+
+            <span class="toggle-label">
+            {{ convertTempMode ? 'Celsius → Fahrenheit' : 'Fahrenheit → Celsius' }}
+            </span>
+            
+            <label for="celsius">{{ convertTempMode ? 'Celsius:' : 'Fahrenheit:' }}</label>
+            <input id="celsius" type="number" [(ngModel)]="celsius"> <br>
+            <button (click)="convertTemperature()">Konvertera</button>
+            
+            <app-result-box
+            [label]="convertTempMode ? 'Celsius till Fahrenheit resultat' : 'Fahrenheit till Celsius resultat'"
+            [value]="fahrenheitResult"
+            [unit]="convertTempMode ? '°F' : '°C'">
+            </app-result-box>
+
+            <br><hr>
+
+            <h3>Längdomvandlare<br>(centimeter ↔ inches)</h3>
+
+            <label class="switch">
+                <input type="checkbox" [(ngModel)]="convertMeasurementMode">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">
+            {{ convertMeasurementMode ? 'Centimeter → Inches' : 'Inches → Centimeter' }}
+            </span>
+            
+            <label for="centimeters">{{ convertMeasurementMode ? 'Centimeter:' : 'Inch:' }}</label>
+            <input id="centimeters" type="number" [(ngModel)]="centimeters"> <br>
+            <button (click)="convertMeasurement()">Konvertera</button>
+            
+            <app-result-box
+            [label]="convertMeasurementMode ? 'Centimeter till inches resultat' : 'Inches till centimeters resultat'"
+            [value]="inchesResult"
+            [unit]="convertMeasurementMode ? 'cm' : 'in'">
+            </app-result-box>
         </div>
     </main>
 

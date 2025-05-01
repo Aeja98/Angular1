@@ -1,0 +1,11 @@
+@use '../../../styles/theme' as *;
+
+.result-box {
+    padding: 1rem;
+    background-color: $toggleSwitch;
+    color: darken($bodyFont, 15);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #00000026;
+    margin-top: 1rem;
+    text-align: center;
+  }

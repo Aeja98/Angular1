@@ -30,5 +30,15 @@ main {
         color: $h2Font;
         font-family: 'Gabriela', serif;
         font-size: 1.3em;
+        margin-bottom: 0;
     }
+}
+
+
+@media (min-width: 700px) {
+    body{font-size: 110%;}
+
+}
+@media (min-width: 900px) {
+    body{font-size: 150%;}
 }

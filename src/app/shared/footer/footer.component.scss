@@ -36,4 +36,8 @@ footer {
             color: $linkHover;
         }
     }
+
+    @media (min-width: 700px) {
+        font-size: 75%;
+    }
 }

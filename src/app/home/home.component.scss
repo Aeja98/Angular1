@@ -15,14 +15,19 @@
     @media (min-width: 700px) {
         flex-direction: row;
         align-items: flex-start;
+
+        gap: 0;
         .Pic, .uppgift {
             width: 50%;
         }
         .Pic {
-            padding-right: 1rem;
+            place-self: center;
+            border-left: solid 1px black;
         }
         .uppgift {
-            padding-left: 1rem;
+            align-self: center;
+            padding: 0 0 0 2em;
+            li {line-height: 1.7em;}
         }
     }
 }

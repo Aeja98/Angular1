@@ -51,20 +51,34 @@
   }
 
 .converter {
-    margin: 2em;
+  padding: 0.3em 0;
+  .conversionGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.5em;
 
-    label {
-        display: block;
-        margin-top: 1em;
-    }
+    .convertHeader {
+      text-align: center;
 
-    input {
-        padding: 0.5em;
+      .toggle-label {
+        font-weight: bold;
         margin-top: 0.5em;
-        width: 175px;
+        display: block;
+      }
     }
 
-    button {
+    .convertInput {
+      text-align: center;
+
+      input {
+        margin: 0.5em;
+        padding: 0.5em;
+        max-width: 150px;
+      }
+
+      button {
+        display: inline-block;
         padding: 1em 1.3em;
         border-radius: 10px;
         background-color: $btnBackground;
@@ -77,10 +91,39 @@
         &:hover {
             background-color: $btnHover;
         }
+      }
     }
 
-    p {
-        font-weight: bold;
-        margin-top: 0.5rem;
+    @media (min-width: 700px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .convertHeader, .convertInput {
+        width: 48%;
+        text-align: left;
+      }
+
+      .convertInput {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 8em;
+
+        input {
+          margin: 0.5em 0;
+          width: 100%;
+          max-width: 200px;
+          font-size: 0.7em;
+        }
+
+        button {
+          width: 100%;
+          max-width: 200px;
+          margin: 0;
+          font-size: 0.7em;
+        }
+      }
     }
+  }
 }

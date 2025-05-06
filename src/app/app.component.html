@@ -1,16 +1,17 @@
 
-
 <div class="header">
   <h1>Konverterings-App!</h1>
-  <div class="menu-wrapper">
-    <i class="fa-solid fa-atom icon" (click)="toggleMenu()"></i>
 
-    <nav [class.open]="menuOpen">
-      <a routerLink="/">Hem</a>
-      <a routerLink="/converter">Omvandlare</a>
-      <a routerLink="/about">Om Projektet</a>
-    </nav>
+  <div class="menuIcon" (click)="toggleMenu()">
+    Meny 
+    <i class="fa-solid fa-atom icon"></i> 
   </div>
+  
+  <nav [class.open]="menuOpen">
+    <a routerLink="/" (click)="closeMenu()">Hem</a>
+    <a routerLink="/converter" (click)="closeMenu()">Omvandlare</a>
+    <a routerLink="/about" (click)="closeMenu()">Om Projektet</a>
+  </nav>
 </div>
 
 <main>

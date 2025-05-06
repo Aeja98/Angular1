@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer.component';
 
@@ -13,7 +15,19 @@ export class AppComponent {
   title = 'Angular1';
   menuOpen: boolean = false;
 
-  toggleMenu(): void {
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.closeMenu();
+      });
+  }
+
+  toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 }

@@ -1,55 +1,64 @@
 @use '../styles/theme' as *;
 
-.menu-wrapper {
-    position: relative;
-    text-align: end;
+.menuIcon {
+    grid-column: 2;
+    place-self: center end;
+    cursor: pointer;
+    padding: 0.4em;
+    color: $iconColor;
 
     .icon {
-        float: right;
-        font-size: 2rem;
-        color: $iconColor;
-        cursor: pointer;
+        font-size: 1.5em;
+        margin: 0 0.1em;
         animation: idle-spin 8s linear infinite;
 
         &:hover {
-        animation: fast-spin 1s linear infinite;
+            animation: fast-spin 3s linear infinite;
         }
     }
-
-    nav {
-        display: none;
-        gap: 1em;
-        animation: fadeIn 0.5s ease-out forwards;
-        place-content: center;
-        position: fixed;     
-
-        a {
-            padding: 0.5em 1em;
-            color: $linkText;
-            text-decoration: none;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border-radius: 15px;
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
-        
-        a:nth-child(1){border: #c7b3e5 solid 1px;}
-        a:nth-child(2){border: #e5dfa7 solid 1px;}
-        a:nth-child(3){border: #ebbbcc solid 1px;}
-
-        &.open {
-            display: flex;
-            width: 100%;
-            float: left;
-            place-content: start;
-            :nth-child(1){background-color: #ece0ff;}
-            :nth-child(2){background-color: #fffacd;}
-            :nth-child(3){background-color: #ffe3ed;}
-        }
+    @media (min-width: 700px) {
+        font-size: 1.4em;
     }
 }
+
+nav {
+    display: none;
+    gap: 0.3em;
+    animation: fadeIn 0.5s ease-out forwards;
+
+    a {
+        font-size: 0.8em;
+        padding: 0.5em 0.7em;
+        color: $linkText;
+        text-decoration: none;
+        text-align: center;
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+        &:hover {
+            transform: scale(1.1);
+        }
+        @media (min-width: 700px) {
+            font-size: 1em; 
+            padding: 0.5em 1em; 
+            margin: 0 1em;
+        }
+    }
+    
+    a:nth-child(1){border: #c7b3e5 solid 1px;}
+    a:nth-child(2){border: #e5dfa7 solid 1px;}
+    a:nth-child(3){border: #ebbbcc solid 1px;}
+
+    &.open {
+        display: flex;
+        width: 100%;
+        grid-column: 1/3;
+        place-content: center;
+        :nth-child(1){background-color: #ece0ff;}
+        :nth-child(2){background-color: #fffacd;}
+        :nth-child(3){background-color: #ffe3ed;}
+    }
+}
+
 
 
 @keyframes fast-spin {

@@ -57,6 +57,11 @@
             }
         }
     }
+    @media (min-width: 700px) {
+        ul {
+            padding-right: 1em;
+        }
+    }
 }
 
 .Pic {

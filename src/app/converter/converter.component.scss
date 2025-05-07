@@ -1,93 +1,99 @@
 @use '../../styles/theme' as *;
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 54px;
-    height: 28px;
-    margin-bottom: 0.5em;
-  
-    input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-  
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: $toggleBackground2;
-      transition: 0.4s;
-      border-radius: 34px;
-  
-      &::before {
-        position: absolute;
-        content: "";
-        height: 20px;
-        width: 20px;
-        left: 4px;
-        bottom: 4px;
-        background-color: $toggleSwitch;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
-    }
-  
-    input:checked + .slider {
-      background-color: $toggleBackground1;
-    }
-  
-    input:checked + .slider::before {
-      transform: translateX(26px);
-    }
-  }
-  
-  .toggle-label {
-    font-weight: bold;
-  }
-
 .converter {
   padding: 0.3em 0;
+
   .conversionGroup {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    padding: 0.5em;
+    border-top: 1px black solid;
+    &:first-child{border: none;}
 
     .convertHeader {
       text-align: center;
+      h3 {font-size: 1em;}
 
       .toggle-label {
-        font-weight: bold;
-        margin-top: 0.5em;
+        font-size: 0.9em;
+        font-weight: 600;
         display: block;
+      }
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      margin-bottom: 0.5em;
+    
+      @media (min-width: 700px) {
+        width: 55px;
+        height: 27px;
+        margin-bottom: 1em;
+      }
+    
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+    
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $toggleBackground2;
+        transition: 0.3s;
+        border-radius: 34px;
+    
+        &::before {
+          position: absolute;
+          content: "";
+          height: 15px;
+          width: 15px;
+          left: 4px;
+          bottom: 3px;
+          background-color: $toggleSwitch;
+          transition: 0.3s;
+          border-radius: 50%;
+    
+          @media (min-width: 700px) {
+            height: 20px; width: 20px;
+          }
+        }
+      }
+      input:checked + .slider {background-color: $toggleBackground1;}
+      input:checked + .slider::before {
+        transform: translateX(18px);
+        @media (min-width: 700px) {transform: translateX(27px);}
       }
     }
 
     .convertInput {
       text-align: center;
 
+      label {font-size: 0.9em;}
       input {
         margin: 0.5em;
-        padding: 0.5em;
-        max-width: 150px;
+        padding: 0.5em 0.3em;
       }
 
       button {
         display: inline-block;
-        padding: 1em 1.3em;
+        padding: 0.8em 1em;
         border-radius: 10px;
         background-color: $btnBackground;
         color: $btnFont;
         border: none;
         cursor: pointer;
-        margin: 1em 0em;
+        margin: 0.5em 0em;
+        font-size: 0.8em;
         font-weight: 600;
-
+        box-shadow: 2px 3px 5px #52737675;
         &:hover {
             background-color: $btnHover;
         }
@@ -98,10 +104,16 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      padding: 0.3em 1em;
 
       .convertHeader, .convertInput {
-        width: 48%;
+        width: 40%;
         text-align: left;
+      }
+
+      .convertHeader {
+        h3 {font-size: 1em;}
+        .toggle-label {font-size: 0.8em;}
       }
 
       .convertInput {
@@ -111,19 +123,18 @@
         margin-left: 8em;
 
         input {
-          margin: 0.5em 0;
-          width: 100%;
-          max-width: 200px;
-          font-size: 0.7em;
+          margin: 0.5em 0 0 0;
+          width: 97%;
         }
 
         button {
           width: 100%;
-          max-width: 200px;
           margin: 0;
-          font-size: 0.7em;
         }
       }
     }
+  }
+  @media (min-width: 700px) {
+    padding: 2em;
   }
 }

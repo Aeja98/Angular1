@@ -1,11 +1,17 @@
 @use '../../../styles/theme' as *;
 
 .result-box {
-    padding: 1rem;
+    padding: 0.7em 1em;
     background-color: $toggleSwitch;
     color: darken($bodyFont, 15);
     border-radius: 8px;
-    box-shadow: 0 2px 5px #00000026;
-    margin-top: 1rem;
+    box-shadow: 4px 3px 5px #5273763a;
     text-align: center;
+    margin: auto;
+    margin-top: 0.7em;
+    font-size: 0.8em;
+
+    @media (min-width: 700px) {
+      font-size: 1em;
+    }
   }

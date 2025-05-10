@@ -1,7 +1,7 @@
 # DT208G Programmering i TypeScript
 ## Moment 3: Angular I
 
-En webbsida skapad för att användare ska kunna convertera värden till andra måtenheter samt att jag skulle få grundläggande förståelse för Angular och dess använding för att skapa webbapplikationer.
+En webbsida skapad för att användare ska kunna konvertera värden till andra måtenheter samt att jag skulle få grundläggande förståelse för Angular och dess använding för att skapa webbapplikationer.
 
 ## Länk
 En liveversion finns tillgänglig här:

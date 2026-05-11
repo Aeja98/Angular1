@@ -6,7 +6,7 @@ footer {
     font-size: 0.6em;
     display: grid;
     grid-row: auto;
-    grid-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     #footLeft {
         grid-row: 1;

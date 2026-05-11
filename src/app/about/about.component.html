@@ -1,4 +1,4 @@
-<main>
+<section>
     <h2>Om sida</h2>
     <section class="layoutAbout">
         <div class="abtDivLeft">
@@ -10,13 +10,13 @@
             </p>
             <ul>
                 <li>
-                    <b>Startsidan</b> där det finns en fin bild av en snöig höst dag och en uppfattning om uppgiftens krav i en lista.
+                    <b>Startsidan</b> innehåller en bild och en kort sammanfattning av uppgiftens krav.
                 </li>
                 <li>
-                    <b>Omvandlare</b> sidan är där användaren har möjlighet att konvertera olika värden: meter till fot, celsius till fahrenheit och centimeter till inches, användaren har också möjlighet att välja åt vilket håll det ska konverteras med en toggle switch. Efter siffran har angetts klickar man på konvertera knappen som då öppnar upp en result-box som visar resultatet.
+                    <b>Omvandlare</b> låter användaren konvertera mellan meter och fot, celsius och fahrenheit samt centimeter och inches. Användaren kan själv välja konverteringsriktning med hjälp av toggle-knappar.
                 </li>
                 <li>
-                    <b>Om sida</b> som beskriver syftet och information om webbsidan.
+                    <b>Om sida</b> beskriver webbplatsens syfte, arbetsprocessen och de slutsatser som dragits under arbetet.
                 </li>
             </ul> 
         </div>
@@ -24,16 +24,20 @@
         <div class="abtDivRight">
             <h3>Skapandet & Slutsatser:</h3>
             <p>
-                Webbplatsen byggdes med hjälp av Angular med fristående komponenter och routing för att strukturera de tre huvudsidorna. Enhetsomvandlaren utvecklades med toggle switches för att låta användarna välja riktningen för konverteringen, och resultaten visas med hjälp av en återanvändbar resultatboxkomponent.
+                Webbplatsen byggdes med Angular, fristående komponenter och Angular Router. Routingen används för att navigera mellan startsidan, omvandlarsidan och sidan om projektet.
 
                 <br><br>
 
-                En responsiv layout skapades med SCSS och media queries för att säkerställa att sidan fungerar över olika skärmstorlekar. Teckensnittsstil, ikon och färgteman lades till för att få en mer personlig webbplats.
+                Omvandlaren utvecklades med databindning genom <code>ngModel</code>. Användaren skriver in ett värde, väljer konverteringsriktning och klickar på en knapp för att visa resultatet. Resultatet visas med hjälp av en återanvändbar komponent, vilket gör koden mer strukturerad och lättare att återanvända.
 
                 <br><br>
 
-                En av de mer utmanande aspekterna var att ansluta SCSS över komponenter och få assets som bilder att visas korrekt på grund av Angulars konfiguration. Att arbeta igenom dessa problem bidrog till att stärka min förståelse för hur Angular hanterar filstruktur och tillgångsladdning.
+                Styling skapades med SCSS. Grundläggande styling placerades globalt, medan mer specifika regler placerades i respektive komponent. Media queries användes för att skapa en responsiv layout som fungerar på både mindre och större skärmar.
+
+                <br><br>
+
+                En utmaning under arbetet var att få en tydlig struktur mellan komponenter, routing, SCSS och assets som bilder. Genom arbetet har jag fått bättre förståelse för hur Angular delar upp en webbplats i komponenter och hur databindning kan användas för att skapa interaktiv funktionalitet.
             </p>
         </div>
     </section>
-</main>
+</section>

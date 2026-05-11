@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { RouterModule } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
@@ -13,7 +12,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 })
 export class AppComponent {
   title = 'Angular1';
-  menuOpen: boolean = false;
+  menuOpen = false;
 
   constructor(private router: Router) {
     this.router.events

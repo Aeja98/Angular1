@@ -12,15 +12,15 @@ import { ResultBoxComponent } from './result-box/result-box.component';
 
 })
 export class ConverterComponent {
-  convertFeetMode: boolean = true;
+  convertFeetMode = true;
   meters: number = 0;
   feetResult: number | null = null;
 
-  convertTempMode: boolean = true;
+  convertTempMode = true;
   celsius: number = 0;
   fahrenheitResult: number | null = null;
 
-  convertMeasurementMode: boolean = true;
+  convertMeasurementMode = true;
   centimeters: number = 0;
   inchesResult: number | null = null;
 

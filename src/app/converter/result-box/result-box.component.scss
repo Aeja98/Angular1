@@ -3,7 +3,7 @@
 .result-box {
     padding: 0.7em 1em;
     background-color: $toggleSwitch;
-    color: darken($bodyFont, 15);
+    color: $bodyFont;
     border-radius: 8px;
     box-shadow: 4px 3px 5px #5273763a;
     text-align: center;

@@ -1,39 +1,84 @@
-# DT208G Programmering i TypeScript
-## Moment 3: Angular I
+# Konverterings-App
 
-En webbsida skapad för att användare ska kunna konvertera värden till andra måtenheter samt att jag skulle få grundläggande förståelse för Angular och dess använding för att skapa webbapplikationer.
+En webbplats skapad med Angular där användaren kan konvertera värden mellan olika enheter.
 
-## Länk
-En liveversion finns tillgänglig här:
+https://angularconverter.netlify.app/
 
-## Egenskaper 
+## Funktioner
 
-- Konvertera värden mellan enheter (t.ex. meter till fot, celsius till fahrenheit, osv.)
-- Växla mellan konverteringsriktningar med visuella switches (find correct word later)
-- Responsiv design som funkar för olika skärmstorlekar
-- Återanvändbar resultatkomponent som visar konverterings resultaten
+- Startsida med information om uppgiften
+- Bild på startsidan
+- Navigationsmeny med Angular Router
+- Undersida för enhetsomvandling
+- Konvertering mellan meter och fot
+- Konvertering mellan celsius och fahrenheit
+- Extra konvertering mellan centimeter och inches
+- Toggle-knappar för att välja konverteringsriktning
+- Resultat visas med en återanvändbar resultatbox-komponent
+- Undersida som beskriver arbetsprocess och slutsatser
+- Responsiv layout för olika skärmstorlekar
 
-## Verktyg
+## Tekniker
 
-Webbplatsen byggdes med hjälp av följande:
+Projektet är byggt med:
 
-- Angular (v 19.2.9) — framework
-- TypeScript — programmering
-- SCSS — styling
-- HTML — angular's komponent mallar
-- Font Awesome — ikoner
+- Angular
+- TypeScript
+- HTML
+- SCSS
+- Angular Router
+- Angular Forms / `ngModel`
+- Komponentbaserad struktur
 
-## Användning
+## Sidor
 
-#### För att starta en lokal server:
-```bash
-ng serve
+Webbplatsen består av tre huvudsidor:
+
+- **Hem** – startsida med kort information om uppgiften och en bild
+- **Omvandlare** – sida där användaren kan konvertera värden mellan olika enheter
+- **Om projektet** – sida som beskriver hur arbetet har genomförts och vilka slutsatser som dragits
+
+## Komponenter
+
+Projektet använder flera Angular-komponenter, bland annat:
+
+- `HomeComponent`
+- `ConverterComponent`
+- `AboutComponent`
+- `FooterComponent`
+- `ResultBoxComponent`
+
+`ResultBoxComponent` används på omvandlarsidan för att visa resultatet av konverteringarna.
+
+## Filstruktur
 ```
-  - Öppna webbläsaren och navigera till `http://localhost:4200/`. Applikationen laddas om automatiskt när du ändrar någon av källfilerna.
-<br> <br>
-
-#### För att bygga projektet:
-```bash
-ng build
+Angular1/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── app/
+│   │   ├── about/
+│   │   ├── converter/
+│   │   │   └── result-box/
+│   │   ├── home/
+│   │   ├── shared/
+│   │   │   └── footer/
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.ts
+│   │   └── app.routes.ts
+│   ├── assets/
+│   │   ├── fonts/
+│   │   └── images/
+│   ├── styles/
+│   │   ├── _fonts.scss
+│   │   └── _theme.scss
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.scss
+├── angular.json
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
 ```
-  - Detta kommer att kompilera projektet och lagrar filerna i `dist/` mappen.
